@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>모바일 청첩장</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="petal-container"></div>
+    <div class="mobile-frame">
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <img src="images/main.jpg">
+
+            <div class="hero-text">
+
+                <h1>성연 ♥ 유진</h1>
+
+                <p>날짜는 언제로 할까?</p>
+
+            </div>
+
+        </section>
+
+        <!-- 메시지 -->
+
+        <section class="message">
+
+            <h2>초대합니다</h2>
+
+            <p class="p1">
+                사랑은 소유가 아니라<br>
+                동행임을 아는 두 사람은<br><br>
+
+                잡은 손을 놓지 않되<br>
+                함부로 잡아끌지 않을 것이며<br><br>
+
+                서로의 두 눈을 고요히 바라보아<br>
+                말하지 않아도 같은 쪽으로 걸어가리라<br><br>
+
+                - 박미라, '아름다운 날에 부치다' 중에서<br><br>
+            </p>
+            <h6>
+                저희 두 사람 이제 믿음과 사랑으로<br>
+                한 길을 가려 합니다.<br><br>
+
+                그 시작의 한 걸음, 함께 축복해 주시면 감사하겠습니다.
+            </h6>
+
+        </section>
+
+        <!-- 갤러리 -->
+
+        <section class="gallery">
+
+            <h2>Gallery</h2>
+
+            <div class="gallery-grid">
+
+                <img src="images/1.jpg">
+                <img src="images/2.jpg">
+                <img src="images/3.jpg">
+                <img src="images/4.jpg">
+                <img src="images/5.png">
+                <img src="images/6.jpg">
+
+            </div>
+
+        </section>
+
+        <!-- 지도 -->
+
+        <section class="location">
+
+            <h2>오시는 길</h2>
+            <a class="map-btn" href="https://naver.me/GWeyeWHp" target="_blank">
+                네이버 지도 보기
+            </a>
+            </iframe>
+
+        </section>
+
+        <!-- 계좌 -->
+
+        <section class="account">
+
+            <h2>마음 전하실 곳</h2>
+
+            <button onclick="copyAccount()">
+
+                신랑 계좌번호 복사
+
+            </button>
+
+            <p id="copyMessage"></p>
+
+        </section>
+
+        <!-- 연락 -->
+
+        <section class="contact">
+
+            <h2>연락하기</h2>
+
+            <a href="tel:01026065823">신랑 전화</a>
+
+            <a href="tel:01037805012">신부 전화</a>
+
+        </section>
+
+        <!-- 링크 공유-->
+        <section class="share">
+
+            <h2>청첩장 공유</h2>
+
+            <button onclick="shareURL()">
+
+                청첩장 링크 복사
+
+            </button>
+
+            <p id="shareMessage"></p>
+
+        </section>
+
+        <!-- 음악 -->
+
+        <audio id="bgm" loop>
+
+            <source src="music.mp3" type="audio/mp3">
+
+        </audio>
+
+        <button class="music-btn" onclick="toggleMusic()">
+
+            🎵 음악
+
+        </button>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
