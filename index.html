@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🤍성연과 유진의 결혼식에 초대합니다🤍</title>
+  <meta name="description" content="성연과 유진의 결혼식에 초대합니다.">
+  <!-- 전체 디자인과 인트로 애니메이션 스타일 -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="intro-open">
+  <div class="invitation-intro" id="invitationIntro">
+    <button class="intro-card-button" id="introSkip" type="button" aria-label="청첩장 입장">
+      <img class="intro-card-image" src="images/intro-card.jpg" alt="For you 카드">
+      <span class="intro-guide">화면을 터치하면 바로 입장합니다</span>
+    </button>
+  </div>
+  <main class="shell">
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">WEDDING INVITATION</div>
+        <h2>성연 <i>&amp;</i> 유진</h2>
+        <div class="date">DECEMBER ELEVENTH · 2027</div>
+      </div>
+      <div>
+        <div class="divider"></div>
+        <p class="message">서로의 하루에 따뜻한 빛이 되어준 두 사람이<br>이제 하나의 계절을 시작합니다.</p>
+      </div>
+    </section>
+    <section class="intro" id="story">
+      <div class="eyebrow">INVITATION</div>
+      <h3>소중한 분들을 초대합니다</h3>
+      <p class="body-copy">함께 걸어온 시간보다,<br>앞으로 함께 걸어갈 시간이<br><br>더 소중하기에<br>저희 두 사람이 사랑의 이름으로<br>새로운 시작을 하려 합니다.<br>귀한
+        걸음으로 축복해주세요.</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="eyebrow">DATE</div><strong>2027. 12. 11</strong><span>토요일 오전 10시 40분</span>
+        </div>
+        <div class="info-card">
+          <div class="eyebrow">PLACE</div><strong>AW웨딩컨벤션</strong><span>경기도 안산시</span>
+        </div>
+      </div>
+    </section>
+    <section id="calendar">
+      <div class="eyebrow">SAVE THE DATE</div>
+      <h2>예식 안내</h2>
+      <p class="body-copy">2027년 12월 11일 토요일<br>오전 10시 40분</p>
+      <div class="calendar">
+        <div class="month">December 2027</div>
+        <div class="week">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
+        <div class="days">
+          <span></span><span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span
+            class="event">11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="eyebrow">GALLERY</div>
+      <h2>우리의 기록</h2>
+      <div class="gallery-main"><img id="mainGalleryImage"
+          src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="우리의 기록"></div>
+      <div class="gallery-strip" id="galleryStrip"></div>
+    </section>
+    <section id="gifts">
+      <div class="eyebrow">GIFTS</div>
+      <h2>마음 전하실 곳</h2>
+      <p class="body-copy">축하의 마음을 전해주실 분들을 위해<br>계좌 정보를 별도로 안내드립니다.</p>
+      <div class="tabs account-trigger-tabs">
+        <button data-account-side="groom">신랑측</button>
+        <button data-account-side="bride">신부측</button>
+      </div>
+      <div class="inline-account-list" id="inlineAccountList"></div>
+    </section>
+    <section class="guestbook" id="guestbook">
+      <div class="eyebrow">GUESTBOOK</div>
+      <h2>축하의 마음</h2>
+      <p class="body-copy">두 사람을 위한 따뜻한 한마디를 남겨주세요.</p>
+      <div style="margin-top:24px"><input id="name" placeholder="성함을 입력해주세요">
+        <div class="guest-form"><input id="message" placeholder="축하 메시지를 입력해주세요"><button id="post">남기기</button></div>
+      </div>
+      <div class="messages" id="messages">
+        <div class="message-card"><b>김하늘</b>
+          <p>두 분의 시작을 진심으로 축복합니다.</p>
+        </div>
+        <div class="message-card"><b>이겨울</b>
+          <p>하얀 겨울처럼 맑고 아름다운 날 되세요.</p>
+        </div>
+      </div>
+    </section>
+    <section class="rsvp" id="rsvp">
+      <div class="eyebrow">RSVP</div>
+      <h2>참석 여부를 알려주세요</h2>
+      <p class="body-copy">더 좋은 자리로 모시기 위해<br>11월 25일까지 회신을 부탁드립니다.</p><button id="rsvpBtn">참석 여부 전달하기</button>
+    </section>
+    <div class="modal-backdrop" id="rsvpModal">
+      <div class="modal">
+        <h3>참석 여부 전달하기</h3><label>어느쪽 하객이신가요?</label>
+        <div class="choice-grid" data-group="side"><button data-value="신랑측">신랑측</button><button
+            data-value="신부측">신부측</button></div><label>성함</label><input id="rsvpName"
+          placeholder="성함을 입력해주세요"><label>참석여부</label>
+        <div class="choice-grid" data-group="attendance"><button data-value="참석합니다">참석합니다</button><button
+            data-value="참석이 어렵습니다">참석이 어렵습니다</button></div><label>동반인원</label>
+        <div class="choice-grid three" data-group="companions"></div><label>식사 인원 (본인포함)</label>
+        <div class="choice-grid three" data-group="meals"></div>
+        <div class="modal-actions"><button id="closeRsvp">닫기</button><button class="submit" id="submitRsvp"
+            disabled>전달하기</button></div>
+      </div>
+    </div>
+    <footer>
+      <div class="brand">Sungyeon <i>&amp;</i> Yoojin</div>
+      <div class="footer-date">DECEMBER ELEVENTH · 2027</div>
+    </footer>
+  </main>
+  <nav class="bottom-nav"><button data-scroll="home"><span>↗</span>공유하기</button><button
+      data-scroll="rsvp"><span>✓</span>참석여부</button><button data-scroll="guestbook"><span>◌</span>축하메시지</button></nav>
+  <div class="toast" id="toast">복사가 완료되었습니다</div>
+  <!-- 갤러리, 계좌, RSVP, 방명록, 인트로 애니메이션 기능 -->
+  <script src="script.js"></script>
+</body>
+
+</html>

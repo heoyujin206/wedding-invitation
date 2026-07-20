@@ -1,0 +1,929 @@
+
+/* 첫 접속 카드 인트로 */
+.invitation-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+  transition: opacity .75s ease, visibility .75s ease;
+}
+
+.invitation-intro.is-finished {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-card-button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  background: #000;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.intro-card-image {
+    display: block;
+    width: min(100vw, 540px);
+    max-height: 82vh;
+    object-fit: contain;
+
+    opacity: 0;
+    transform: scale(.97);
+
+    animation: introFadeIn .6s ease forwards;
+}
+
+.intro-guide {
+
+    position: fixed;
+    left: 50%;
+    bottom: 42px;
+
+    transform: translateX(-50%);
+
+    color: rgba(255,255,255,.82);
+
+    font-size: 11px;
+
+    letter-spacing: .18em;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    animation:
+        introGuideFade .6s ease .5s forwards,
+        introGuidePulse 2s ease-in-out infinite 1.1s;
+}
+
+body.intro-open {
+  overflow: hidden;
+}
+
+@keyframes introFadeIn {
+
+    from {
+        opacity: 0;
+        transform: scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+@keyframes introFadeOut {
+
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+}
+
+@keyframes introGuideFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes introGuidePulse {
+  0%, 100% { opacity: .42; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-card-image,
+  .intro-guide {
+    animation: none !important;
+  }
+
+  .intro-card-image {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap');
+
+    :root {
+      --bg: #e7edf0;
+      --paper: #fbfcfb;
+      --ink: #35434b;
+      --muted: #64737a;
+      --blue: #40545f;
+      --line: #d4e0e3;
+      --soft: #edf3f5
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Manrope, Arial, sans-serif
+    }
+
+    button,
+    input {
+      font: inherit
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 390px;
+      margin: 0 auto;
+      background: var(--paper);
+      min-height: 100vh;
+      box-shadow: 0 24px 78px rgba(72, 94, 106, .18)
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 28px 28px 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(32, 54, 66, .20), rgba(32, 54, 66, .68)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+      color: #fff
+    }
+
+    .eyebrow {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .28em;
+      color: #7592a0
+    }
+
+    h1,
+    h2,
+    .serif {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 500
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: .78;
+      letter-spacing: -.06em;
+      margin: 28px 0 18px
+    }
+
+    .hero h1 i {
+      font-size: .65em;
+      color: #7893a0
+    }
+
+    .hero .date {
+      font-size: 10px;
+      letter-spacing: .22em;
+      color: #617983;
+      font-weight: 600
+    }
+
+    .hero .message {
+      font-size: 12px;
+      line-height: 2;
+      color: #64737a;
+      margin: 24px 0 0
+    }
+
+    .divider {
+      width: 44px;
+      height: 1px;
+      background: #a9c0c9;
+      margin: 28px auto
+    }
+
+    section {
+      padding: 64px 28px
+    }
+
+    .intro {
+      text-align: center;
+      background: #fbfcfb
+    }
+
+    h2 {
+      font-size: 40px;
+      line-height: .95;
+      letter-spacing: -.05em;
+      margin: 18px 0
+    }
+
+    p {
+      margin: 0
+    }
+
+    .body-copy {
+      font-size: 11px;
+      line-height: 2;
+      color: var(--muted)
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      margin-top: 28px
+    }
+
+    .info-card {
+      background: var(--paper);
+      padding: 20px 12px;
+      text-align: center
+    }
+
+    .info-card strong {
+      display: block;
+      font-size: 11px;
+      margin-top: 8px
+    }
+
+    .info-card span {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+      margin-top: 5px
+    }
+
+    .calendar {
+      margin-top: 30px;
+      border-top: 1px solid var(--line);
+      padding-top: 18px
+    }
+
+    .month {
+      font-family: "Cormorant Garamond";
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 15px
+    }
+
+    .week,
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      text-align: center;
+      gap: 8px
+    }
+
+    .week {
+      font-size: 9px;
+      color: #8ea8b3;
+      margin-bottom: 10px
+    }
+
+    .days span {
+      font-size: 10px;
+      padding: 8px 0
+    }
+
+    .days .event {
+      background: var(--blue);
+      color: white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      justify-self: center;
+      display: grid;
+      place-items: center
+    }
+
+    .dark {
+      background: var(--blue);
+      color: white
+    }
+
+    .dark .body-copy {
+      color: #dce7ea
+    }
+
+    .dark .eyebrow {
+      color: #c4d9e1
+    }
+
+    .schedule {
+      margin-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, .2)
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .15)
+    }
+
+    .row time {
+      font-size: 10px;
+      color: #c7dbe1
+    }
+
+    .row strong {
+      font-size: 11px
+    }
+
+    .row span {
+      display: block;
+      font-size: 10px;
+      color: #dce7ea;
+      margin-top: 5px
+    }
+
+    .gallery-main {
+      margin-top: 26px;
+      aspect-ratio: 4/3;
+      border-radius: 4px;
+      overflow: hidden;
+      background: #dfe7e9
+    }
+
+    .gallery-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .gallery-strip {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0 4px;
+      scrollbar-width: none
+    }
+
+    .gallery-strip::-webkit-scrollbar {
+      display: none
+    }
+
+    .gallery-thumb {
+      flex: 0 0 74px;
+      height: 74px;
+      border: 2px solid transparent;
+      padding: 0;
+      background: #dfe7e9;
+      overflow: hidden
+    }
+
+    .gallery-thumb.active {
+      border-color: var(--blue)
+    }
+
+    .gallery-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 28px
+    }
+
+    .tabs button {
+      border: 1px solid #c6d2d6;
+      padding: 13px;
+      background: rgba(255, 255, 255, .55);
+      color: #52616a;
+      font-size: 10px
+    }
+
+    .tabs button.active {
+      background: var(--blue);
+      color: #fff;
+      border-color: var(--blue)
+    }
+
+    .account {
+      margin-top: 14px;
+      font-size: 11px;
+      line-height: 1.8
+    }
+
+    .account-card {
+      border: 1px solid var(--line);
+      padding: 16px;
+      margin-top: 10px
+    }
+
+    .account-card b {
+      display: block;
+      font-size: 10px;
+      color: #7893a0;
+      letter-spacing: .1em
+    }
+
+    .account-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px
+    }
+
+    .account-actions button {
+      flex: 1;
+      border: 1px solid #c6d2d6;
+      background: #fff;
+      padding: 8px 9px;
+      font-size: 9px;
+      color: #52616a
+    }
+
+    .account-number {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background: var(--soft);
+      font-size: 11px
+    }
+
+    .account-number.show {
+      display: block
+    }
+
+    .copy-account {
+      border: 1px solid #c6d2d6;
+      background: #fff;
+      padding: 6px 9px;
+      font-size: 9px;
+      color: #52616a;
+      white-space: nowrap
+    }
+
+    .guestbook {
+      background: var(--blue);
+      color: white
+    }
+
+    .guestbook input {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid #a9c0c9;
+      background: transparent;
+      color: white;
+      padding: 12px 4px;
+      outline: 0;
+      font-size: 11px
+    }
+
+    .guestbook input::placeholder {
+      color: #bed0d6
+    }
+
+    .guest-form {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px
+    }
+
+    .guest-form input {
+      flex: 1
+    }
+
+    .guest-form button {
+      border: 1px solid #ccdde2;
+      color: white;
+      padding: 0 16px;
+      font-size: 10px
+    }
+
+    .messages {
+      margin-top: 28px;
+      display: grid;
+      gap: 10px
+    }
+
+    .message-card {
+      border: 1px solid rgba(255, 255, 255, .15);
+      background: rgba(255, 255, 255, .05);
+      padding: 15px
+    }
+
+    .message-card b {
+      font-size: 10px;
+      color: #c7dbe1
+    }
+
+    .message-card p {
+      font-size: 11px;
+      line-height: 1.8;
+      margin-top: 7px
+    }
+
+    .rsvp {
+      text-align: center
+    }
+
+    .rsvp button {
+      width: 100%;
+      border: 0;
+      background: var(--blue);
+      color: white;
+      padding: 16px;
+      font-size: 10px;
+      letter-spacing: .18em;
+      margin-top: 28px
+    }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid var(--line);
+      padding: 44px 28px 96px
+    }
+
+    .brand {
+      font-family: "Cormorant Garamond";
+      font-size: 30px
+    }
+
+    .brand i {
+      color: #7893a0
+    }
+
+    .footer-date {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      color: #7893a0;
+      margin-top: 10px
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 390px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 12px 20px;
+      background: rgba(251, 252, 251, .95);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--line);
+      z-index: 10
+    }
+
+    .bottom-nav button {
+      border: 0;
+      background: transparent;
+      color: #617983;
+      font-size: 9px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px
+    }
+
+    .bottom-nav span {
+      font-size: 16px;
+      line-height: 1
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 78px;
+      transform: translateX(-50%) translateY(20px);
+      background: #344952;
+      color: #fff;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-size: 11px;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s;
+      z-index: 30;
+      white-space: nowrap
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0)
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 39, 47, .58);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 25
+    }
+
+    .modal-backdrop.show {
+      display: flex
+    }
+
+    .modal {
+      width: 100%;
+      max-width: 390px;
+      max-height: 88vh;
+      overflow-y: auto;
+      background: #fbfcfb;
+      border-radius: 22px 22px 0 0;
+      padding: 28px
+    }
+
+    .modal h3 {
+      font-family: "Cormorant Garamond";
+      font-size: 32px;
+      font-weight: 500;
+      margin: 0 0 20px
+    }
+
+    .modal label {
+      display: block;
+      font-size: 10px;
+      color: #64737a;
+      margin: 16px 0 7px
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px
+    }
+
+    .choice-grid.three {
+      grid-template-columns: repeat(3, 1fr)
+    }
+
+    .data-select {
+      width: 100%;
+      border: 1px solid #c6d2d6;
+      background: #fff;
+      padding: 12px;
+      font-size: 11px;
+      color: #52616a
+    }
+
+    .choice-grid button {
+      border: 1px solid #c6d2d6;
+      background: #fff;
+      padding: 11px 5px;
+      font-size: 10px;
+      color: #52616a
+    }
+
+    .choice-grid button.selected {
+      background: #40545f;
+      color: #fff;
+      border-color: #40545f
+    }
+
+    .modal input {
+      width: 100%;
+      border: 1px solid #c6d2d6;
+      padding: 12px;
+      font-size: 11px;
+      outline: 0
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 24px
+    }
+
+    .modal-actions button {
+      flex: 1;
+      padding: 14px;
+      border: 1px solid #c6d2d6;
+      font-size: 10px
+    }
+
+    .modal-actions .submit {
+      background: #40545f;
+      color: #fff;
+      border-color: #40545f
+    }
+
+    .modal-actions .submit:disabled {
+      opacity: .4;
+      cursor: not-allowed
+    }
+
+
+    .inline-account-list {
+      display: none;
+      margin-top: 14px;
+      border-top: 1px solid var(--line)
+    }
+
+    .inline-account-list.show {
+      display: block
+    }
+
+    .inline-account-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line)
+    }
+
+    .inline-account-label {
+      font-size: 10px;
+      color: #7893a0;
+      letter-spacing: .08em;
+      font-weight: 700
+    }
+
+    .inline-account-name {
+      margin-top: 5px;
+      font-size: 11px
+    }
+
+    .inline-account-number {
+      margin-top: 7px;
+      font-size: 11px;
+      color: #52616a
+    }
+
+    .inline-copy-account {
+      flex: 0 0 auto;
+      border: 1px solid #c6d2d6;
+      background: #fff;
+      padding: 8px 11px;
+      font-size: 9px;
+      color: #52616a;
+      white-space: nowrap
+    }
+
+    .account-sheet-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(24, 39, 47, .58);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 28
+    }
+
+    .account-sheet-backdrop.show {
+      display: flex
+    }
+
+    .account-sheet {
+      width: 100%;
+      max-width: 390px;
+      max-height: 82vh;
+      overflow-y: auto;
+      background: #fbfcfb;
+      border-radius: 22px 22px 0 0;
+      padding: 10px 24px 30px;
+      box-shadow: 0 -20px 50px rgba(24, 39, 47, .22);
+      animation: sheetUp .24s ease-out
+    }
+
+    @keyframes sheetUp {
+      from {
+        transform: translateY(100%)
+      }
+
+      to {
+        transform: translateY(0)
+      }
+    }
+
+    .sheet-handle {
+      width: 42px;
+      height: 4px;
+      border-radius: 999px;
+      background: #cbd9de;
+      margin: 2px auto 18px
+    }
+
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px
+    }
+
+    .sheet-header h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 31px;
+      font-weight: 500;
+      line-height: 1;
+      margin: 8px 0 0
+    }
+
+    .sheet-close {
+      width: 34px;
+      height: 34px;
+      border: 1px solid #d4e0e3;
+      border-radius: 50%;
+      background: #fff;
+      color: #52616a;
+      font-size: 22px
+    }
+
+    .sheet-account-card {
+      border-top: 1px solid var(--line);
+      padding: 17px 0
+    }
+
+    .sheet-account-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px
+    }
+
+    .sheet-account-label {
+      font-size: 10px;
+      color: #7893a0;
+      letter-spacing: .08em;
+      font-weight: 700
+    }
+
+    .sheet-account-name {
+      font-size: 11px;
+      margin-top: 5px
+    }
+
+    .sheet-account-number {
+      display: none;
+      margin-top: 12px;
+      padding: 11px 12px;
+      background: var(--soft);
+      font-size: 11px
+    }
+
+    .sheet-account-number.show {
+      display: block
+    }
+
+    .sheet-account-actions {
+      display: flex;
+      gap: 7px
+    }
+
+    .sheet-account-actions button {
+      border: 1px solid #c6d2d6;
+      background: #fff;
+      padding: 7px 9px;
+      font-size: 9px;
+      color: #52616a;
+      white-space: nowrap
+    }
+
+    body.sheet-open {
+      overflow: hidden
+    }
+
+    @media(min-width:700px) {
+      body {
+        padding: 24px 0
+      }
+
+      .shell {
+        border-radius: 18px;
+        overflow: hidden
+      }
+    }
+
+    
