@@ -3,123 +3,287 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🤍성연과 유진의 결혼식에 초대합니다🤍</title>
-  <meta name="description" content="성연과 유진의 결혼식에 초대합니다.">
-  <!-- 전체 디자인과 인트로 애니메이션 스타일 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#eaf1f7">
+  <title>성연과 유진의 결혼식에 초대합니다</title>
+  <meta name="description" content="2027년 12월 11일, 성연과 유진의 결혼식에 초대합니다.">
+  <meta property="og:title" content="성연과 유진의 결혼식에 초대합니다">
+  <meta property="og:description" content="2027년 12월 11일 토요일 오전 10시 40분">
+  <meta property="og:image" content="images/intro-card.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="intro-open">
-  <div class="invitation-intro" id="invitationIntro">
-    <button class="intro-card-button" id="introSkip" type="button" aria-label="청첩장 입장">
-      <img class="intro-card-image" src="images/intro-card.jpg" alt="For you 카드">
+  <div id="snow-container"></div>
+  <div class="invitation-intro" id="invitationIntro" aria-hidden="false">
+    <button class="intro-card-button" id="introSkip" type="button" aria-label="청첩장 본문으로 입장">
+      <img class="intro-card-image" id="introCardImage" src="images/intro-card.jpg" alt="For you 문구가 적힌 청첩장 카드">
       <span class="intro-guide">화면을 터치하면 바로 입장합니다</span>
     </button>
   </div>
-  <main class="shell">
-    <section class="hero" id="home">
+
+  <main class="shell" id="mainContent">
+    <section class="hero" id="home" aria-labelledby="heroTitle">
       <div>
-        <div class="eyebrow">WEDDING INVITATION</div>
-        <h2>성연 <i>&amp;</i> 유진</h2>
-        <div class="date">DECEMBER ELEVENTH · 2027</div>
+        <p class="eyebrow">WEDDING INVITATION</p>
+        <h1 id="heroTitle">
+          <span class="hero-name">성연</span>
+          <i>&amp;</i>
+          <span class="hero-name">유진</span>
+        </h1>
+        <p class="date"> 2027 · 12 · 11</p>
       </div>
       <div>
-        <div class="divider"></div>
-        <p class="message">서로의 하루에 따뜻한 빛이 되어준 두 사람이<br>이제 하나의 계절을 시작합니다.</p>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="message">함께한 계절을 지나<br>서로의 가장 따뜻한 겨울이 되려 합니다.</p>
       </div>
     </section>
-    <section class="intro" id="story">
-      <div class="eyebrow">INVITATION</div>
-      <h3>소중한 분들을 초대합니다</h3>
-      <p class="body-copy">함께 걸어온 시간보다,<br>앞으로 함께 걸어갈 시간이<br><br>더 소중하기에<br>저희 두 사람이 사랑의 이름으로<br>새로운 시작을 하려 합니다.<br>귀한
-        걸음으로 축복해주세요.</p>
+
+    <section class="intro section-paper" id="story" aria-labelledby="storyTitle">
+      <p class="eyebrow">INVITATION</p>
+      <h2 id="storyTitle">소중한 분들을 초대합니다</h2>
+      <div class="section-ornament" aria-hidden="true"><span></span><b>✦</b><span></span></div>
+      <p class="body-copy">
+        함께 걸어온 시간보다,<br>앞으로 함께 걸어갈 시간이<br><br>
+        더 소중하기에<br>저희 두 사람이 사랑의 이름으로<br>
+        새로운 시작을 하려 합니다.<br>귀한 걸음으로 축복해 주세요.
+      </p>
+      <div class="family-info">
+        <p><span>이용훈 · 조점희</span>의 아들 <strong>성연</strong></p>
+        <p><span>허봉행 · 정순월</span>의 딸 <strong>유진</strong></p>
+      </div>
       <div class="info-grid">
         <div class="info-card">
-          <div class="eyebrow">DATE</div><strong>2027. 12. 11</strong><span>토요일 오전 10시 40분</span>
+          <p class="eyebrow">DATE</p><strong>2027. 12. 11</strong><span>토요일 오전 10시 40분</span>
         </div>
         <div class="info-card">
-          <div class="eyebrow">PLACE</div><strong>AW웨딩컨벤션</strong><span>경기도 안산시</span>
-        </div>
-      </div>
-    </section>
-    <section id="calendar">
-      <div class="eyebrow">SAVE THE DATE</div>
-      <h2>예식 안내</h2>
-      <p class="body-copy">2027년 12월 11일 토요일<br>오전 10시 40분</p>
-      <div class="calendar">
-        <div class="month">December 2027</div>
-        <div class="week">
-          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span></div>
-        <div class="days">
-          <span></span><span></span><span></span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span
-            class="event">11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span>
+          <p class="eyebrow">PLACE</p><strong>AW웨딩컨벤션</strong><span>경기도 안산시</span>
         </div>
       </div>
     </section>
 
-    <section id="gallery">
-      <div class="eyebrow">GALLERY</div>
-      <h2>우리의 기록</h2>
-      <div class="gallery-main"><img id="mainGalleryImage"
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="우리의 기록"></div>
-      <div class="gallery-strip" id="galleryStrip"></div>
+    <section class="section-paper" id="calendar" aria-labelledby="calendarTitle">
+      <p class="eyebrow">SAVE THE DATE</p>
+      <h2 id="calendarTitle">예식 안내</h2>
+      <p class="body-copy">2027년 12월 11일 토요일<br>오전 10시 40분</p>
+      <p class="dday" id="dday" aria-live="polite"></p>
+
+      <div class="calendar" aria-label="2027년 12월 달력">
+        <div class="month">December 2027</div>
+        <div class="week" aria-hidden="true">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+        </div>
+        <div class="days">
+          <span></span><span></span><span></span>
+          <span>1</span><span>2</span><span>3</span><span>4</span>
+          <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+          <span class="event" aria-label="예식일 11일">11</span>
+          <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span>
+          <span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span>
+          <span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span>
+          <span>30</span><span>31</span>
+        </div>
+      </div>
+
+      <a class="primary-link" href="wedding.ics" download>캘린더에 저장</a>
     </section>
-    <section id="gifts">
-      <div class="eyebrow">GIFTS</div>
-      <h2>마음 전하실 곳</h2>
+
+    <section class="location-section" id="location" aria-labelledby="locationTitle">
+      <p class="eyebrow">LOCATION</p>
+      <h2 id="locationTitle">오시는 길</h2>
+
+      <div class="venue-card">
+        <strong>AW웨딩컨벤션</strong>
+        <p id="venueAddress">경기도 안산시 단원구 광덕1로 171</p>
+        <button class="text-button" id="copyAddressBtn" type="button">주소 복사</button>
+      </div>
+
+      <div id="naverMap" class="naver-map" role="region" aria-label="예식장 위치 지도"></div>
+
+      <div class="map-buttons">
+        <a href="https://map.naver.com/" target="_blank" rel="noopener noreferrer">네이버지도</a>
+        <a href="https://map.kakao.com/" target="_blank" rel="noopener noreferrer">카카오맵</a>
+      </div>
+
+      <div class="transport-grid">
+        <article>
+          <h3>대중교통</h3>
+          <p>
+            지하철 4호선 고잔역 하차 후<br>
+            택시 또는 버스를 이용해 주세요.
+          </p>
+        </article>
+
+        <article>
+          <h3>주차 안내</h3>
+
+          <p>
+            당일 웨딩홀 지하 주차장은 신랑·신부 및 혼주 차량 전용으로<br>
+            하객 차량은 이용이 어렵습니다.<br>
+          </p>
+
+          <p>
+            공영주차장 및 주차타워 이용 시 <strong>2시간 무료 주차</strong>가 가능합니다.
+          </p>
+
+          <div class="parking-map-buttons">
+            <a href="#" class="parking-link" data-name="AW주차타워" data-lat="37.3088859400686" data-lng="126.82729487783">
+              AW주차타워
+            </a>
+
+            <a href="#" class="parking-link" data-name="MK주차타워" data-lat="37.3088535554548" data-lng="126.827825687994">
+              MK주차타워
+            </a>
+
+            <a href="#" class="parking-link" data-name="공영주차장" data-lat="37.3073972177991" data-lng="126.828014452497">
+              공영주차장
+            </a>
+          </div>
+
+          <p class="transport-grid">
+            <br>
+            AW주차타워 및 MK주차타워는 등록없이 2시간 무료이며,<br>
+            공영주차장은 1층 로비 인포데스크에서 등록을 하셔야 2시간 무료 적용됩니다.<br>
+          </p>
+        </article>
+      </div>
+      </article>
+      </div>
+    </section>
+
+    <section class="section-paper" id="gallery" aria-labelledby="galleryTitle">
+      <p class="eyebrow">GALLERY</p>
+      <h2 id="galleryTitle">우리의 기록</h2>
+      <div class="gallery-main">
+        <img id="mainGalleryImage" src="images/gallery-01.jpg" alt="성연과 유진의 웨딩 사진" loading="lazy" decoding="async">
+      </div>
+      <div class="gallery-strip" id="galleryStrip" aria-label="웨딩 사진 목록"></div>
+    </section>
+
+    <section class="section-paper" id="gifts" aria-labelledby="giftTitle">
+      <p class="eyebrow">GIFTS</p>
+      <h2 id="giftTitle">마음 전하실 곳</h2>
       <p class="body-copy">축하의 마음을 전해주실 분들을 위해<br>계좌 정보를 별도로 안내드립니다.</p>
-      <div class="tabs account-trigger-tabs">
-        <button data-account-side="groom">신랑측</button>
-        <button data-account-side="bride">신부측</button>
+      <div class="tabs" role="group" aria-label="계좌 구분">
+        <button type="button" data-account-side="groom" aria-expanded="false">신랑측</button>
+        <button type="button" data-account-side="bride" aria-expanded="false">신부측</button>
       </div>
-      <div class="inline-account-list" id="inlineAccountList"></div>
+      <div class="inline-account-list" id="inlineAccountList" aria-live="polite"></div>
     </section>
-    <section class="guestbook" id="guestbook">
-      <div class="eyebrow">GUESTBOOK</div>
-      <h2>축하의 마음</h2>
-      <p class="body-copy">두 사람을 위한 따뜻한 한마디를 남겨주세요.</p>
-      <div style="margin-top:24px"><input id="name" placeholder="성함을 입력해주세요">
-        <div class="guest-form"><input id="message" placeholder="축하 메시지를 입력해주세요"><button id="post">남기기</button></div>
-      </div>
-      <div class="messages" id="messages">
-        <div class="message-card"><b>김하늘</b>
-          <p>두 분의 시작을 진심으로 축복합니다.</p>
+
+    <section class="guestbook" id="guestbook" aria-labelledby="guestbookTitle">
+      <p class="eyebrow">GUESTBOOK</p>
+      <h2 id="guestbookTitle">축하의 마음</h2>
+      <p class="body-copy">두 사람을 위한 따뜻한 한마디를 남겨 주세요.</p>
+
+      <form class="guestbook-form" id="guestbookForm">
+        <label for="guestName">성함</label>
+        <input id="guestName" name="name" maxlength="20" autocomplete="name" placeholder="성함을 입력해 주세요" required>
+
+        <label for="guestMessage">축하 메시지</label>
+        <textarea id="guestMessage" name="message" maxlength="200" rows="3" placeholder="축하 메시지를 입력해 주세요"
+          required></textarea>
+        <div class="guestbook-form-meta">
+          <span id="guestbookModeLabel">새 메시지 작성</span>
+          <span id="guestMessageCount">0 / 200</span>
         </div>
-        <div class="message-card"><b>이겨울</b>
-          <p>하얀 겨울처럼 맑고 아름다운 날 되세요.</p>
+
+        <div class="guestbook-form-actions">
+          <button id="cancelGuestbookEdit" class="secondary" type="button" hidden>수정 취소</button>
+          <button id="post" type="submit">남기기</button>
         </div>
-      </div>
+        <p class="form-status" id="guestbookStatus" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="messages" id="messages" aria-live="polite"></div>
+      <nav class="guestbook-pagination" id="guestbookPagination" aria-label="축하 메시지 페이지"></nav>
     </section>
-    <section class="rsvp" id="rsvp">
-      <div class="eyebrow">RSVP</div>
-      <h2>참석 여부를 알려주세요</h2>
-      <p class="body-copy">더 좋은 자리로 모시기 위해<br>11월 25일까지 회신을 부탁드립니다.</p><button id="rsvpBtn">참석 여부 전달하기</button>
+
+    <section class="rsvp section-paper" id="rsvp" aria-labelledby="rsvpSectionTitle">
+      <p class="eyebrow">RSVP</p>
+      <h2 id="rsvpSectionTitle">참석 여부를 알려주세요</h2>
+      <p class="body-copy">더 좋은 자리로 모시기 위해<br>11월 25일까지 회신을 부탁드립니다.</p>
+      <button id="rsvpBtn" type="button">참석 여부 전달하기</button>
     </section>
-    <div class="modal-backdrop" id="rsvpModal">
-      <div class="modal">
-        <h3>참석 여부 전달하기</h3><label>어느쪽 하객이신가요?</label>
-        <div class="choice-grid" data-group="side"><button data-value="신랑측">신랑측</button><button
-            data-value="신부측">신부측</button></div><label>성함</label><input id="rsvpName"
-          placeholder="성함을 입력해주세요"><label>참석여부</label>
-        <div class="choice-grid" data-group="attendance"><button data-value="참석합니다">참석합니다</button><button
-            data-value="참석이 어렵습니다">참석이 어렵습니다</button></div><label>동반인원</label>
-        <div class="choice-grid three" data-group="companions"></div><label>식사 인원 (본인포함)</label>
-        <div class="choice-grid three" data-group="meals"></div>
-        <div class="modal-actions"><button id="closeRsvp">닫기</button><button class="submit" id="submitRsvp"
-            disabled>전달하기</button></div>
+
+    <div class="modal-backdrop" id="rsvpModal" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle" hidden>
+      <div class="modal" tabindex="-1">
+        <h2 id="rsvpTitle">참석 여부 전달하기</h2>
+
+        <form id="rsvpForm">
+          <fieldset>
+            <legend>어느 쪽 하객이신가요?</legend>
+            <div class="choice-grid" data-group="side">
+              <button type="button" data-value="신랑측" aria-pressed="false">신랑측</button>
+              <button type="button" data-value="신부측" aria-pressed="false">신부측</button>
+            </div>
+          </fieldset>
+
+          <label for="rsvpName">성함</label>
+          <input id="rsvpName" name="name" autocomplete="name" maxlength="20" placeholder="성함을 입력해 주세요" required>
+
+          <label for="rsvpPhone">연락처 <span class="optional-label">선택</span></label>
+          <input id="rsvpPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20"
+            placeholder="010-0000-0000">
+
+          <fieldset>
+            <legend>참석 여부</legend>
+            <div class="choice-grid" data-group="attendance">
+              <button type="button" data-value="참석합니다" aria-pressed="false">참석합니다</button>
+              <button type="button" data-value="참석이 어렵습니다" aria-pressed="false">참석이 어렵습니다</button>
+            </div>
+          </fieldset>
+
+          <label for="companions">동반 인원</label>
+          <select id="companions" required>
+            <option value="">선택해 주세요</option>
+            <option value="0">0명</option>
+            <option value="1">1명</option>
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명</option>
+            <option value="5">5명</option>
+            <option value="6">6명</option>
+          </select>
+
+          <label for="meals">식사 인원(본인 포함)</label>
+          <select id="meals" required>
+            <option value="">선택해 주세요</option>
+            <option value="0">식사하지 않음</option>
+            <option value="1">1명</option>
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명</option>
+            <option value="5">5명</option>
+            <option value="6">6명</option>
+            <option value="7">7명</option>
+          </select>
+
+          <p class="privacy-note">입력한 정보는 참석 인원 확인 목적으로만 사용됩니다.</p>
+          <p class="form-status" id="rsvpStatus" role="status" aria-live="polite"></p>
+
+          <div class="modal-actions">
+            <button id="closeRsvp" type="button">닫기</button>
+            <button class="submit" id="submitRsvp" type="submit" disabled>전달하기</button>
+          </div>
+        </form>
       </div>
     </div>
+
     <footer>
       <div class="brand">Sungyeon <i>&amp;</i> Yoojin</div>
       <div class="footer-date">DECEMBER ELEVENTH · 2027</div>
     </footer>
   </main>
-  <nav class="bottom-nav"><button data-scroll="home"><span>↗</span>공유하기</button><button
-      data-scroll="rsvp"><span>✓</span>참석여부</button><button data-scroll="guestbook"><span>◌</span>축하메시지</button></nav>
-  <div class="toast" id="toast">복사가 완료되었습니다</div>
-  <!-- 갤러리, 계좌, RSVP, 방명록, 인트로 애니메이션 기능 -->
+
+  <nav class="bottom-nav" aria-label="빠른 메뉴">
+    <button id="shareBtn" type="button"><span aria-hidden="true">↗</span>공유하기</button>
+    <button type="button" data-scroll="rsvp"><span aria-hidden="true">✓</span>참석여부</button>
+    <button type="button" data-scroll="guestbook"><span aria-hidden="true">◌</span>축하메시지</button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=bodwvmwy84"></script>
   <script src="script.js"></script>
 </body>
 
